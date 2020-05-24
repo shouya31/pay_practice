@@ -16,7 +16,6 @@ const pay = () => {
 
     Payjp.createToken(card, (status, response) => {
       if (status === 200) {
-
         const token = response.id;
         // 描画先の要素を取得
         const renderDom = document.getElementById("charge-form");
@@ -24,6 +23,8 @@ const pay = () => {
         const tokenObj = `<input value=${token} type="hidden" name='token'>`;
         // 描画する
         renderDom.insertAdjacentHTML("beforeend", tokenObj);
+
+        document.getElementById("charge-form").reset();
         document.getElementById("charge-form").submit();
       } else {
       }
