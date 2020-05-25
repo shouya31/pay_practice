@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   root to: 'payjp#index'
 
-  resources :payjp 
+  resources :payjp, only: [:index, :create]
     
 end
