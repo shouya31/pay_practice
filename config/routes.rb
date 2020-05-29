@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root to: 'payjp#index'
+  root to: 'orders#index'
 
-  resources :payjp, only: [:index, :create]
-    
+  resources :orders, only:[:create]
 end

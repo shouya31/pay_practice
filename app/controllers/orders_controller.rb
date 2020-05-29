@@ -1,5 +1,4 @@
-class PayjpController < ApplicationController
-
+class OrdersController < ApplicationController
   def index
   end
 
@@ -7,6 +6,7 @@ class PayjpController < ApplicationController
   def create
     @order = Order.create(price_params)
     pay_item
+    redirect_to root_path
   end
 
 
@@ -24,5 +24,4 @@ class PayjpController < ApplicationController
       currency:'jpy'
     )
   end
-
 end
